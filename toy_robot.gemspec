@@ -6,12 +6,13 @@ require "toy_robot/version"
 Gem::Specification.new do |spec|
   spec.name          = "toy_robot"
   spec.version       = ToyRobot::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Kevin Lai"]
+  spec.email         = ["kevin.km.lai@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Toy Robot}
+  spec.description   = %q{Solutions to Toy Robot}
+
+  spec.homepage      = "https://github.com/kevinlaiGH/Toy_Robot_Simulator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
