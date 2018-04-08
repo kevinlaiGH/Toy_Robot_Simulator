@@ -1,8 +1,8 @@
 module ToyRobot
   class Robot
-    attr_reader :east, :north
+    attr_reader :east, :north, :direction
 
-    def initialize(east = 0, north = 0, direction = "North")
+    def initialize(east = 0, north = 0, direction = 'North')
       @east = east
       @north = north
       @direction = direction
@@ -21,14 +21,24 @@ module ToyRobot
     end
 
     def move_south
-      @south -= 1
+      @north -= 1
+    end
+
+    def move
+      send("move_#{@direction.downcase}")
     end
 
     def move
       case @direction
-        when "NORTH" then move_north
-        when "SOUTH" then move_south
+        when 'NORTH' then move_north
+        when 'SOUTH' then move_south
+        when 'EAST' then move_east
+        when 'WEST' then move_west
       end
+    end
+
+    def turn_left
+      @direction = 'WEST'
     end
 
   end

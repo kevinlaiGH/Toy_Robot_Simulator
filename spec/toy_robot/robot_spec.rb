@@ -43,23 +43,48 @@ RSpec.describe ToyRobot::Robot do
     expect(subject.east).to eq(-4)
   end
 
-  context "when facing north" do
-    subject {ToyRobot::Robot.new(0,0, "NORTH")}
+  context 'when facing north' do
+    subject {ToyRobot::Robot.new(0,0, 'NORTH')}
 
-    it "moves north" do
+    it 'moves north' do
       subject.move
       expect(subject.north).to eq(1)
     end
   end
 
-  context "when facing south" do
-    subject {ToyRobot::Robot.new(0,0, "SOUTH")}
+  context 'when facing south' do
+    subject {ToyRobot::Robot.new(0,0, 'SOUTH')}
 
-    it "moves south" do
+    it 'moves south' do
       subject.move
       expect(subject.north).to eq(-1)
     end
+
+    it 'turns left to face east' do
+      subject.turn_left
+      expect(subject.direction).to eq('EAST')
+    end
   end
+
+  context 'when facing east' do
+    subject {ToyRobot::Robot.new(0,0, 'EAST')}
+
+    it 'moves east' do
+      subject.move
+      expect(subject.east).to eq(1)
+    end
+  end
+
+  context 'when facing west' do
+    subject {ToyRobot::Robot.new(0,0, 'WEST')}
+
+    it 'moves west' do
+      subject.move
+      expect(subject.east).to eq(-1)
+    end
+  end
+
+
 
 end
 
