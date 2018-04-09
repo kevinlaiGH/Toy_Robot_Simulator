@@ -39,17 +39,12 @@ module ToyRobot
     end
 
     def turn_left
-      # @direction = case @direction
-      # when 'NORTH' then 'WEST'
-      # when 'WEST' then 'SOUTH'
-      # when 'SOUTH' then 'EAST'
-      # when 'EAST' then 'NORTH'
-      # end
       @direction = DIRECTIONS[DIRECTIONS.index(@direction)-1]
     end
 
     def turn_right
-      @direction = DIRECTIONS[DIRECTIONS.index(@direction)+1]
+      index = DIRECTIONS.index(@direction)
+      @direction = DIRECTIONS.rotate(1)[index]
     end
 
   end
