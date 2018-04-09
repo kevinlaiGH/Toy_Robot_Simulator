@@ -1,5 +1,6 @@
 module ToyRobot
   class Robot
+    DIRECTIONS = ['NORTH','EAST', 'SOUTH','WEST']
     attr_reader :east, :north, :direction
 
     def initialize(east = 0, north = 0, direction = 'North')
@@ -38,10 +39,13 @@ module ToyRobot
     end
 
     def turn_left
-      @direction = case @direction
-      when "NORTH" then "WEST"
-      when "SOUTH" then "EAST"
-      end
+      # @direction = case @direction
+      # when 'NORTH' then 'WEST'
+      # when 'WEST' then 'SOUTH'
+      # when 'SOUTH' then 'EAST'
+      # when 'EAST' then 'NORTH'
+      # end
+      @direction = DIRECTIONS[DIRECTIONS.index(@direction)-1]
     end
 
   end
